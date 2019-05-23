@@ -1,0 +1,20 @@
+extend layout
+block content
+    h1.title #{board.name}
+    h2.title.is-size-5 #{board.description}
+    p.content Put this token in your arduino: 
+        b #{board.token}
+    table.table
+        thead
+            tr
+                th Fecha
+                th Valor
+        tbody
+            each val in board.data
+                tr
+                    td #{dateFns.format(val.timestamp, 'DD/MM/YYYY @ HH:mm.SS')}
+                    td #{val.value}
+                    
+
+
+

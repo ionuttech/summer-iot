@@ -1,0 +1,20 @@
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="/css/bulma.min.css")
+        title #{title}
+    body
+        block header
+            nav.navbar.is-dark
+                .navbar-brand
+                    a.navbar-item(href="/")
+                        span.title.is-size-5.has-text-white(style=" margin-left: 10px") SummerCamp IoT Cloud
+                .navbar-menu
+                    .navbar-end
+                        a.navbar-item(href="/create") Add Board
+        main.container
+            block content
+

@@ -1,0 +1,8 @@
+extend layout
+block content
+    h1.title See all the boards
+    each board in boards
+        .board.box
+            h2.title.is-size-3 #{board.name}
+            h3.title.is-size-6 #{board.description}
+            a.link(href=`/board/${board.token}`) See your board
