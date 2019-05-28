@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 const app = express();
+
 const PORT = process.env.PORT || 7000;
 
 require('dotenv').config({ path: 'variables.env' });
@@ -10,6 +13,8 @@ mongoose.connect(process.env.DATABASE);
 mongoose.connection.on('error', function(error) {
 	console.log('🙅‍♀️🙅‍♀️🙅‍♀️', error.message);
 });
+
+app.use(cors());
 
 require('./models/Board');
 require('./models/Data');
