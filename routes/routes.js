@@ -18,7 +18,7 @@ router.get('/create', (req, res) => {
 });
 router.post('/create', BoardController.saveBoard);
 router.post('/save-data', DataController.saveData);
-
+router.get('/json-data', DataController.getBoardData);
 router.post('/send-email', MailController.sendMail);
 
 module.exports = router;

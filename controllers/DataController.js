@@ -23,3 +23,14 @@ module.exports.saveData = (req, res) => {
 		}
 	});
 };
+
+module.exports.getBoardData = (req, res) => {
+	const { token } = req.query;
+	Board.findOne({ token }).then(foundBoard => {
+		if (foundBoard) {
+			res.status(200).json(foundBoard.data);
+		} else {
+			res.status(404).send('Board not found');
+		}
+	});
+};
